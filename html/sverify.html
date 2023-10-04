@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify</title>
+</head>
+<link rel="stylesheet" href="http://localhost/connectex/css/verify.css">
+<body>
+    <div class="wave"></div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+
+    <div class="form"
+        style="text-align: center;position: absolute;border-radius: 13%;top: 34%;left: 34%;background: blanchedalmond;border: ridge;width: 34%;height: 37%; ">
+        <h2><img src="http://localhost/connectex/images/search.gif" style="height: 5%;width: 5%;"> <u>VERIFICATION STEP</u> <img
+                src="http://localhost/connectex/images/search.gif" style="height: 5%;width: 5%;"></h2>
+        <p>"OTP sent to your email"</p>
+        <form action="http://localhost/connectex/php/sverify.php" method="POST" enctype="application/x-www-form-urlencoded" autocomplete="off">
+            <div class="error-text"
+                style="background-color: red;width: 14%;top: 38%;position: absolute;left: 42%;display: none;">Error
+            </div><br>
+            <div class="field-input">
+                <input style="padding: 3%;text-align: center;font-size: x-large;" type="number" name="otp1"
+                    class="otp_field" placeholder="0" min="0" max="9" required onpaste="return false">
+                <input style="padding: 3%;text-align: center;font-size: x-large;" type="number" name="otp2"
+                    class="otp_field" placeholder="0" min="0" max="9" required onpaste="false">
+                <input style="padding: 3%;text-align: center;font-size: x-large;" type="number" name="otp3"
+                    class="otp_field" placeholder="0" min="0" max="9" required onpaste="false">
+                <input style="padding: 3%;text-align: center;font-size: x-large;" type="number" name="otp4"
+                    class="otp_field" placeholder="0" min="0" max="9" required onpaste="false">
+            </div><br>
+            <div class="submit">
+              <input type="submit" value="Verify" class="button" style="width: 23%;block-size: 30%;height: 37px;border-radius: 50%;background-color: chartreuse;">
+               </div>
+        </form>
+
+    </div>
+    
+
+    
+
+
+
+
+    <script src="http://localhost/connectex/js/verify.js"></script>
+</body>
+
+</html>
+

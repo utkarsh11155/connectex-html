@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Alumni-Student Chat</title>
+	<style>
+		body {
+			background-color: #f2f2f2;
+			font-family: Arial, sans-serif;
+		}
+
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+		}
+
+		h1 {
+			text-align: center;
+			margin-bottom: 20px;
+		}
+
+		.chat {
+			height: 400px;
+			overflow-y: scroll;
+			padding: 10px;
+			border: 1px solid #ccc;
+			margin-bottom: 20px;
+		}
+
+		.message {
+			margin-bottom: 10px;
+		}
+
+		.message .sender {
+			font-weight: bold;
+		}
+
+		.message .time {
+			color: #999;
+			font-size: 12px;
+			margin-left: 10px;
+		}
+
+		.form {
+			display: flex;
+			margin-top: 20px;
+		}
+
+		.form input[type="text"] {
+			flex: 1;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+			font-size: 16px;
+		}
+
+		.form button {
+			padding: 10px;
+			background-color: #4CAF50;
+			color: #fff;
+			border: none;
+			border-radius: 3px;
+			font-size: 16px;
+			cursor: pointer;
+			margin-left: 10px;
+		}
+
+		.meeting-link {
+			display: block;
+			margin-top: 20px;
+			font-size: 16px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Alumni-Side</h1>
+		<div class="chat">
+			<div class="message">
+				<span class="sender">Utkarsh Mishra (Alumni)</span>
+				<span class="time">3:00 PM</span>
+				<p>Hi there! How can I help you with your career?</p>
+			</div>
+			<div class="message">
+				<span class="sender">Gaurav (Student)</span>
+				<span class="time">3:02 PM</span>
+				<p>I'm interested in marketing. Do you have any advice on how to break into the field?</p>
+			</div>
+			<div class="message">
+				<span class="sender">Utkarsh Mishra (Alumni)</span>
+				<span class="time">3:05 PM</span>
+				<p>Yes, I can definitely help you out. Would you like to schedule a meeting with me?</p>
+			</div>
+			<div class="message">
+				<span class="sender">Gaurav (Student)</span>
+				<span class="time">3:07 PM</span>
+				<p>That would be great! When are you available?</p>
+			</div>
+		</div>
+		<form class="form">
+			<input type="text" placeholder="Type your message here...">
+			<button>Send</button>
+		</form>
+		<a href="https://meet.google.com/abc-defg-hij" class="meeting-link">Schedule a meeting with Gaurav</a>
+</div>
+<script>
+	// Script to add a new message to the chat
+	const form = document.querySelector('.form');
+	form.addEventListener('submit', (e) => {
+		e.preventDefault();
+		const message = e.target.querySelector('input[type="text"]').value;
+		if (message.trim() !== '') {
+			const chat = document.querySelector('.chat');
+			const newMessage = document.createElement('div');
+			newMessage.classList.add('message');
+			newMessage.innerHTML = `
+				<span class="sender">Utkarsh Mishra (Alumni)</span>
+				<span class="time">${getTime()}</span>
+				<p>${message}</p>
+			`;
+			chat.appendChild(newMessage);
+			e.target.reset();
+		}
+	});
+
+	// Function to get the current time in the format HH:MM AM/PM
+	function getTime() {
+		const now = new Date();
+		const hours = now.getHours() % 12 || 12;
+		const minutes = now.getMinutes().toString().padStart(2, '0');
+		const ampm = now.getHours() >= 12 ? 'PM' : 'AM';
+		return `${hours}:${minutes} ${ampm}`;
+	}
+
+	// Script to generate a meeting link and display it in the chat
+	
+
+	// Script to simulate alumni sending a meeting link after student agrees to schedule a meeting
+	setTimeout(() => {
+		generateMeetingLink();
+	}, 3000);
+</script>
+</body>
+</html>
